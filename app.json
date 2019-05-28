@@ -1,8 +1,6 @@
 {
   "name": "WeDo-Frontend",
-  "scripts": {
-    "postdeploy": "npm run production"
-  },
+  "scripts": {},
   "env": {},
   "formation": {},
   "addons": [],
