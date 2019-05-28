@@ -1,8 +1,7 @@
-import Hero from "./components/hero";
-import FeatureInformation from "./components/feature-information/index";
-import FeatureMobile from "./components/feature-information/feature";
+import Hero from "./components/hero"
+import FeatureInformation from "./components/feature-information/index"
 
-import React, { Component } from "react";
+import React, { Component } from "react"
 
 class Home extends Component {
   render() {
@@ -10,10 +9,9 @@ class Home extends Component {
       <div>
         <Hero />
         <FeatureInformation />
-        
       </div>
-    );
+    )
   }
 }
 
-export default Home;
+export default Home
