@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Feature from "./feature"
 import { spaces, breakpoints, colors, textStyles } from '../../../../styles'
 import styled from 'styled-components'
 
@@ -20,6 +21,7 @@ class FeatureInformation extends Component {
     return (
       <div>
         <Headline>Everything You Need In One Place</Headline>
+        <Feature image="https://res.cloudinary.com/apomarn/image/upload/v1559053076/WeDo/image-calendar_rvkr5h.png" title="Calendarize Your Activities" link="Build Calendar" />
       </div>
     );
   }
