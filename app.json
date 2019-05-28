@@ -1,0 +1,15 @@
+{
+  "name": "WeDo-Frontend",
+  "scripts": {
+    "postdeploy": "npm run production"
+  },
+  "env": {},
+  "formation": {},
+  "addons": [],
+  "buildpacks": [
+    {
+      "url": "heroku/nodejs"
+    }
+  ],
+  "stack": "heroku-18"
+}
