@@ -11,7 +11,7 @@ const Headline = styled.h3`
   ${textStyles.h3Bold}
 
   @media screen and (min-width: ${breakpoints.desktop}px) {
-    text-align: right;
+    margin: 0 
     ${textStyles.h2Bold}
   }
 `
@@ -33,7 +33,7 @@ ${textStyles.h5}
 `
 
 
-class FeatureExplanation extends Component {
+class FeatureExplanationMobile extends Component {
   render() {
     return (
       <div style={{display: "flex", flexDirection:"column"}}>
@@ -51,10 +51,10 @@ class FeatureExplanation extends Component {
         <Checklist src="https://res.cloudinary.com/apomarn/image/upload/v1559056569/WeDo/checklist.png"></Checklist>
         <Text>{this.props.text3}</Text>
         </MyDiv>
-        <Anchor flavor="rounded" style={{marginTop:"8px"}}>{this.props.button}</Anchor>
+        <Anchor to={this.props.to} flavor="rounded" style={{marginTop:"8px"}}>{this.props.button}</Anchor>
       </div>
     );
   }
 }
 
-export default FeatureExplanation;
+export default FeatureExplanationMobile;
