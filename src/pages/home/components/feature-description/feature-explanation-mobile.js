@@ -1,8 +1,7 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 import { spaces, breakpoints, colors, textStyles } from '../../../../styles'
 import styled from 'styled-components'
-import Anchor from "../../../../components/anchor"
-
+import Anchor from '../../../../components/anchor'
 
 const Headline = styled.h3`
   margin: ${spaces.relax}px ${spaces.comfortable}px;
@@ -30,32 +29,33 @@ const MyDiv = styled.div`
 `
 
 const Text = styled.div`
-${textStyles.h5}
+  ${textStyles.h5}
 `
-
 
 class FeatureExplanationMobile extends Component {
   render() {
     return (
-      <div style={{display: "flex", flexDirection:"column"}}>
-        <img src={this.props.image} ></img>
+      <div style={{ display: 'flex', flexDirection: 'column' }}>
+        <img src={this.props.image} />
         <Headline>{this.props.title}</Headline>
         <MyDiv>
-        <Checklist src="https://res.cloudinary.com/apomarn/image/upload/v1559056569/WeDo/checklist.png"></Checklist>
-        <Text>{this.props.text1}</Text>
+          <Checklist src='https://res.cloudinary.com/apomarn/image/upload/v1559056569/WeDo/checklist.png' />
+          <Text>{this.props.text1}</Text>
         </MyDiv>
         <MyDiv>
-        <Checklist src="https://res.cloudinary.com/apomarn/image/upload/v1559056569/WeDo/checklist.png"></Checklist>
-        <Text>{this.props.text2}</Text>
+          <Checklist src='https://res.cloudinary.com/apomarn/image/upload/v1559056569/WeDo/checklist.png' />
+          <Text>{this.props.text2}</Text>
         </MyDiv>
         <MyDiv>
-        <Checklist src="https://res.cloudinary.com/apomarn/image/upload/v1559056569/WeDo/checklist.png"></Checklist>
-        <Text>{this.props.text3}</Text>
+          <Checklist src='https://res.cloudinary.com/apomarn/image/upload/v1559056569/WeDo/checklist.png' />
+          <Text>{this.props.text3}</Text>
         </MyDiv>
-        <Anchor to={this.props.to} flavor="rounded" style={{marginTop:"8px"}}>{this.props.button}</Anchor>
+        <Anchor to={this.props.to} flavor='rounded' style={{ marginTop: '8px' }}>
+          {this.props.button}
+        </Anchor>
       </div>
-    );
+    )
   }
 }
 
-export default FeatureExplanationMobile;
+export default FeatureExplanationMobile

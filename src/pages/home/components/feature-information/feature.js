@@ -1,9 +1,7 @@
-import React, { Component } from "react"
-import { spaces, breakpoints, colors, textStyles } from "../../../../styles"
-import styled from "styled-components"
-import Anchor from "../../../../components/anchor"
-
-
+import React, { Component } from 'react'
+import { spaces, breakpoints, colors, textStyles } from '../../../../styles'
+import styled from 'styled-components'
+import Anchor from '../../../../components/anchor'
 
 const Container = styled.div`
   display: flex;
@@ -31,11 +29,12 @@ ${textStyles.h4Bold}
 class Feature extends Component {
   render() {
     return (
-      
       <Container>
         <Image src={this.props.image} />
         <Title>{this.props.title}</Title>
-        <Anchor to="/" flavor="plain">{this.props.link}</Anchor>
+        <Anchor to='/' flavor='plain'>
+          {this.props.link}
+        </Anchor>
       </Container>
     )
   }
