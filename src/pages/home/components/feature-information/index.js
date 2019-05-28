@@ -32,12 +32,12 @@ class FeatureInformation extends Component {
         <Carousel 
       renderCenterLeftControls={({ previousSlide }) => (
         <button onClick={previousSlide}>
-          <img alt="leftArrow" src="https://res.cloudinary.com/apomarn/image/upload/v1559077887/WeDo/left-arrow.png" />
+          <img alt="leftArrow" src="https://res.cloudinary.com/apomarn/image/upload/v1559083267/WeDo/left-arrow.png" />
         </button>
       )}
       renderCenterRightControls={({ nextSlide }) => (
         <button onClick={nextSlide}>
-          <img alt="rightArrow" src="https://res.cloudinary.com/apomarn/image/upload/v1559077887/WeDo/right-arrow.png" />
+          <img alt="rightArrow" src="https://res.cloudinary.com/apomarn/image/upload/v1559083266/WeDo/right-arrow.png" />
         </button>
       )}
       >
