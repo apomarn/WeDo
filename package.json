@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "parcel index.html",
     "build": "parcel build index.html",
-    "production": "http-server dist"
+    "production": "http-server -p $PORT dist"
   },
   "keywords": [],
   "author": "",
