@@ -1,30 +1,31 @@
 import React, { Component } from "react"
-import { spaces, breakpoints, colors, textStyles } from "../../../../styles"
+import { spaces, textStyles } from "../../../../styles"
 import styled from "styled-components"
 import Anchor from "../../../../components/anchor"
 
 
 const Container = styled.div`
   background-image: url(${props => props.image});
-  width: 100%;
-  height: 400px;
+  background-repeat: no-repeat;
   display: flex;
   flex-direction: column;
+  height: 400px;
   margin-top: 24px;
+  width: 100%;
 `
 const Headline = styled.h2`
-  text-align: right;
-  padding-top: 100px;
   margin-right: 120px;
+  padding-top: 100px;
+  text-align: right;
   ${textStyles.h2Bold}
 `
 
 const Checklist = styled.img`
-  width: ${spaces.relax}px;
-  height: ${spaces.relax}px;
   align-self: center;
-  margin-top: 0;
+  height: ${spaces.relax}px;
   margin-right: ${spaces.cozy}px;
+  margin-top: 0;
+  width: ${spaces.relax}px;
 `
 
 const Text = styled.p`
