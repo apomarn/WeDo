@@ -18,14 +18,6 @@ const Title = styled.h4`
   ${textStyles.h4Bold}
 `
 
-const MyLink = styled.p`
-color: ${colors.primary}
-margin: 0px;
-
-
-${textStyles.h4Bold}
-`
-
 class Feature extends Component {
   render() {
     return (

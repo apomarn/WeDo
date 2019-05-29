@@ -18,7 +18,7 @@ const Headline = styled.h2`
   }
 `
 
-const FeatureMobile = [
+const featuresMobile = [
   {
     image: 'https://res.cloudinary.com/apomarn/image/upload/v1559053076/WeDo/image-calendar.png',
     title: 'Calendarize Your Activities',
@@ -78,7 +78,7 @@ class FeatureInformation extends Component {
                     </button>
                   )}
                 >
-                  {FeatureMobile.map(feature => {
+                  {featuresMobile.map(feature => {
                     return <Feature {...feature} key={feature.image} />
                   })}
                 </Carousel>
@@ -87,7 +87,7 @@ class FeatureInformation extends Component {
               <>
                 <Headline>Everything You Need In One Place</Headline>
                 <div style={{ display: 'flex', justifyContent: 'space-around' }}>
-                  {FeatureMobile.splice(0, 3).map(feature => {
+                  {featuresMobile.splice(0, 3).map(feature => {
                     return <Feature {...feature} key={feature.image} />
                   })}
                 </div>
