@@ -13,6 +13,7 @@
   "license": "ISC",
   "dependencies": {
     "http-server": "^0.11.1",
+    "nuka-carousel": "^4.5.8",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-media": "^1.9.2",
