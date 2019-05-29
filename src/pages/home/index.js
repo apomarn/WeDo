@@ -1,6 +1,6 @@
 import Hero from './components/hero'
 import FeatureInformation from './components/feature-information'
-
+import FeatureDescription from './components/feature-description'
 import React, { Component } from 'react'
 
 class Home extends Component {
@@ -9,6 +9,7 @@ class Home extends Component {
       <div>
         <Hero />
         <FeatureInformation />
+        <FeatureDescription />
       </div>
     )
   }
