@@ -1,4 +1,5 @@
 import Hero from './components/hero'
+import Navbar from '../navbar'
 import FeatureInformation from './components/feature-information'
 import FeatureDescription from './components/feature-description'
 import React, { Component } from 'react'
@@ -9,6 +10,7 @@ class Home extends Component {
   render() {
     return (
       <div>
+        <Navbar />
         <Hero />
         <FeatureInformation />
         <FeatureDescription />
