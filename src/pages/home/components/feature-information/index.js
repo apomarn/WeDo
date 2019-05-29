@@ -18,6 +18,39 @@ const Headline = styled.h2`
   }
 `
 
+const FeatureMobile = [
+  {
+    image: 'https://res.cloudinary.com/apomarn/image/upload/v1559053076/WeDo/image-calendar.png',
+    title: 'Calendarize Your Activities',
+    link: 'Build Calendar'
+  },
+  {
+    image: 'https://res.cloudinary.com/apomarn/image/upload/v1559053097/WeDo/image-guest-list.png',
+    title: 'List Your Guests',
+    link: 'Build Your List'
+  },
+  {
+    image: 'https://res.cloudinary.com/apomarn/image/upload/v1559053117/WeDo/image-wedding-story.png',
+    title: 'Share Your Wedding',
+    link: 'Build Your Story'
+  },
+  {
+    image: 'https://res.cloudinary.com/apomarn/image/upload/v1559053056/WeDo/image-announcement.png',
+    title: 'Announce Your Wedding',
+    link: 'Build a Plan'
+  },
+  {
+    image: 'https://res.cloudinary.com/apomarn/image/upload/v1559053116/WeDo/image-vendors.png',
+    title: 'Vendors Contact Information',
+    link: 'Contact Them'
+  },
+  {
+    image: 'https://res.cloudinary.com/apomarn/image/upload/v1559053090/WeDo/image-core-decisions.png',
+    title: 'Core Decisions',
+    link: 'Plan it Out'
+  }
+]
+
 class FeatureInformation extends Component {
   render() {
     return (
@@ -45,57 +78,18 @@ class FeatureInformation extends Component {
                     </button>
                   )}
                 >
-                  <Feature
-                    image='https://res.cloudinary.com/apomarn/image/upload/v1559053076/WeDo/image-calendar.png'
-                    title='Calendarize Your Activities'
-                    link='Build Calendar'
-                  />
-                  <Feature
-                    image='https://res.cloudinary.com/apomarn/image/upload/v1559053056/WeDo/image-announcement.png'
-                    title='Announce Your Wedding'
-                    link='Build a Plan'
-                  />
-                  <Feature
-                    image='https://res.cloudinary.com/apomarn/image/upload/v1559053116/WeDo/image-vendors.png'
-                    title='Vendors Contact Information'
-                    link='Contact Them'
-                  />
-                  <Feature
-                    image='https://res.cloudinary.com/apomarn/image/upload/v1559053090/WeDo/image-core-decisions.png'
-                    title='Core Decisions'
-                    link='Plan it Out'
-                  />
-                  <Feature
-                    image='https://res.cloudinary.com/apomarn/image/upload/v1559053097/WeDo/image-guest-list.png'
-                    title='List Your Guests'
-                    link='Build Your List'
-                  />
-                  <Feature
-                    image='https://res.cloudinary.com/apomarn/image/upload/v1559053117/WeDo/image-wedding-story.png'
-                    title='Share Your Wedding'
-                    link='Build Your Story'
-                  />
+                  {FeatureMobile.map(feature => {
+                    return <Feature {...feature} key={feature.image} />
+                  })}
                 </Carousel>
               </>
             ) : (
               <>
                 <Headline>Everything You Need In One Place</Headline>
                 <div style={{ display: 'flex', justifyContent: 'space-around' }}>
-                  <Feature
-                    image='https://res.cloudinary.com/apomarn/image/upload/v1559053076/WeDo/image-calendar.png'
-                    title='Calendarize Your Activities'
-                    link='Build Calendar'
-                  />
-                  <Feature
-                    image='https://res.cloudinary.com/apomarn/image/upload/v1559053097/WeDo/image-guest-list.png'
-                    title='List Your Guests'
-                    link='Build Your List'
-                  />
-                  <Feature
-                    image='https://res.cloudinary.com/apomarn/image/upload/v1559053117/WeDo/image-wedding-story.png'
-                    title='Share Your Wedding'
-                    link='Build Your Story'
-                  />
+                  {FeatureMobile.splice(0, 3).map(feature => {
+                    return <Feature {...feature} key={feature.image} />
+                  })}
                 </div>
               </>
             )
