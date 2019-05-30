@@ -33,7 +33,12 @@ const StyledLink = styled(Link)`
 class Anchor extends Component {
   render() {
     return (
-      <StyledLink to={this.props.to} flavor={this.props.flavor} style={this.props.style}>
+      <StyledLink
+        to={this.props.to}
+        flavor={this.props.flavor}
+        style={this.props.style}
+        className={this.props.className}
+      >
         {this.props.children}
       </StyledLink>
     )

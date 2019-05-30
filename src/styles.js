@@ -4,7 +4,12 @@ const family = `
 
 const bold = `
     ${family}
-    font-weight: bold;
+    font-weight: 700;
+`
+
+const regular = `
+    ${family}
+    font-weight: 400;
 `
 
 const h1Bold = `
@@ -38,32 +43,32 @@ const h6Bold = `
 `
 const h1 = `
     font-size: 50px;
-    ${family};
+    ${regular}
 `
 
 const h2 = `
     font-size: 37px;
-    ${family}
+    ${regular}
 `
 
 const h3 = `
     font-size: 28px;
-    ${family}
+    ${regular}
 `
 
 const h4 = `
     font-size: 21px;
-    ${family}
+    ${regular}
 `
 
 const h5 = `
     font-size: 16px;
-    ${family}
+    ${regular}
 `
 
 const h6 = `
     font-size: 12px;
-    ${family}
+    ${regular}
 `
 
 export const textStyles = {
