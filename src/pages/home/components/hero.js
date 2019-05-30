@@ -61,12 +61,12 @@ class Hero extends Component {
           Wedding Planning <br /> Made Easy
         </Headline>
         <ActionsContainer>
-          <Anchor to='/' flavor='rounded'>
+          <Anchor to="/questions" flavor="rounded">
             Get Started
           </Anchor>
           <Anchor
-            to='/find-couple'
-            flavor='plain'
+            to="/find-couple"
+            flavor="plain"
             style={{
               marginTop: spaces.comfortable
             }}
@@ -74,7 +74,7 @@ class Hero extends Component {
             Find Couple
           </Anchor>
         </ActionsContainer>
-        <Couple src='https://res.cloudinary.com/apomarn/image/upload/v1559000928/WeDo/couple_ydc0gx.png' />
+        <Couple src="https://res.cloudinary.com/apomarn/image/upload/v1559000928/WeDo/couple_ydc0gx.png" />
       </Container>
     )
   }
