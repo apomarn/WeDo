@@ -30,7 +30,7 @@ const Menu = styled.div`
   flex-direction: row;
   width: 33%;
   justify-content: space-around;
-  ${textStyles.h4}
+  ${textStyles.h5}
 `
 
 const SearchBar = styled.input`
