@@ -30,7 +30,7 @@ class Feature extends Component {
       <Container>
         <Image src={this.props.image} />
         <Title>{this.props.title}</Title>
-        <Anchor to="/" flavor="plain">
+        <Anchor to={this.props.linkTo} flavor="plain">
           {this.props.link}
         </Anchor>
       </Container>

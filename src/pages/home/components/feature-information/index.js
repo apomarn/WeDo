@@ -29,17 +29,20 @@ const features = [
   {
     image: images.questionary,
     title: 'Questionary',
-    link: 'Get Started'
+    link: 'Get Started',
+    linkTo: '/questions'
   },
   {
     image: images.guestList,
     title: 'List Your Guests',
-    link: 'Build Your List'
+    link: 'Build Your List',
+    linkTo: '/guest-list'
   },
   {
     image: images.story,
     title: 'Share Your Wedding',
-    link: 'Get Inspired Now'
+    link: 'Get Inspired Now',
+    linkTo: '/stories'
   }
 ]
 
