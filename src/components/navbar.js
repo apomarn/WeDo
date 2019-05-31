@@ -51,7 +51,7 @@ class Navbar extends Component {
       return (
         <>
           <img alt="menu" src={images.menuIcon} width={24} height={24} />
-          <a href="/" style={{ alignSelf: 'center' }} style={{ margin: '0 auto' }}>
+          <a href="/" style={{ margin: '0 auto' }}>
             <img alt="logo" src={images.logo} width={127} height={50} />
           </a>
         </>
@@ -60,7 +60,9 @@ class Navbar extends Component {
 
     return (
       <>
-        <img alt="logo" src={images.logo} width={127} height={50} />
+        <a href="/">
+          <img alt="logo" src={images.logo} width={127} height={50} />
+        </a>
         <Menu>
           <li>
             <StyledAnchor flavor="plain" to="/calendar">
