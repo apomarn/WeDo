@@ -13,6 +13,12 @@ const Container = styled.div`
   height: 100vh;
   justify-content: center;
   padding: 0 ${spaces.comfortable}px;
+  position: relative;
+
+  > a {
+    position: absolute;
+    top: ${spaces.comfortable}px;
+  }
 `
 
 const InnerContainer = styled.div`
@@ -138,33 +144,38 @@ class Auth extends Component {
     const title = isSignIn ? 'Sign In' : 'Sign Up'
 
     return (
-      <Container>
-        <InnerContainer>
-          <Image src={images.authArt} />
-          <Title>{title}</Title>
-          <Input
-            value={this.state.email}
-            placeholder="Email"
-            onChange={this.onEmailChange}
-            style={{ marginBottom: spaces.comfortable }}
-          />
-          <Input
-            value={this.state.password}
-            type="password"
-            placeholder="Password"
-            onChange={this.onPasswordChange}
-            style={{ marginBottom: spaces.cozy * 6 }}
-          />
-          {error && <Error>{error}</Error>}
-          <Anchor as="button" flavor="rounded" onClick={this.onSubmit}>
-            Enter
-          </Anchor>
+      <>
+        <Container>
+          <a href="/">
+            <img alt="logo" src={images.logo} width={127} height={50} />
+          </a>
+          <InnerContainer>
+            <Image src={images.authArt} />
+            <Title>{title}</Title>
+            <Input
+              value={this.state.email}
+              placeholder="Email"
+              onChange={this.onEmailChange}
+              style={{ marginBottom: spaces.comfortable }}
+            />
+            <Input
+              value={this.state.password}
+              type="password"
+              placeholder="Password"
+              onChange={this.onPasswordChange}
+              style={{ marginBottom: spaces.cozy * 6 }}
+            />
+            {error && <Error>{error}</Error>}
+            <Anchor as="button" flavor="rounded" onClick={this.onSubmit}>
+              Enter
+            </Anchor>
 
-          <OtherActionsContainer>
-            <Footer isSignIn={isSignIn} />
-          </OtherActionsContainer>
-        </InnerContainer>
-      </Container>
+            <OtherActionsContainer>
+              <Footer isSignIn={isSignIn} />
+            </OtherActionsContainer>
+          </InnerContainer>
+        </Container>
+      </>
     )
   }
 }
