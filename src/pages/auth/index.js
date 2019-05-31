@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import firebase from '../../firebase'
 import { images } from '../../utils'
 import { spaces, colors, textStyles } from '../../styles'
+import NavBar from '../../components/navbar'
 import Input from '../../components/input'
 import Anchor from '../../components/anchor'
 
@@ -14,11 +15,6 @@ const Container = styled.div`
   justify-content: center;
   padding: 0 ${spaces.comfortable}px;
   position: relative;
-
-  > a {
-    position: absolute;
-    top: ${spaces.comfortable}px;
-  }
 `
 
 const InnerContainer = styled.div`
@@ -145,10 +141,8 @@ class Auth extends Component {
 
     return (
       <>
+        <NavBar />
         <Container>
-          <a href="/">
-            <img alt="logo" src={images.logo} width={127} height={50} />
-          </a>
           <InnerContainer>
             <Image src={images.authArt} />
             <Title>{title}</Title>

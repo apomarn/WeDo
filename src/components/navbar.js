@@ -6,18 +6,23 @@ import styled from 'styled-components'
 import Media from 'react-media'
 
 const Container = styled.div`
-  align-items: center;
   background-color: ${colors.white};
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+  margin-bottom: 1px;
+`
+
+const InnerContainer = styled.div`
+  align-items: center;
   display: flex;
   height: ${spaces.cozy * 8}px;
   justify-content: space-between;
-  margin: 0 ${spaces.comfortable}px;
-  max-width: ${spaces.cozy * 150}px;
+  padding: 0 ${spaces.comfortable}px;
 
   @media screen and (min-width: ${breakpoints.desktop}px) {
     height: ${spaces.cozy * 12}px;
-    margin: 0 auto;
-    padding: 0 ${spaces.comfortable}px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: ${spaces.cozy * 150}px;
   }
 `
 
@@ -92,7 +97,9 @@ class Navbar extends Component {
   render() {
     return (
       <Container>
-        <Media query={`(max-width: ${breakpoints.desktop}px)`}>{this.renderContent}</Media>
+        <InnerContainer>
+          <Media query={`(max-width: ${breakpoints.desktop}px)`}>{this.renderContent}</Media>
+        </InnerContainer>
       </Container>
     )
   }
