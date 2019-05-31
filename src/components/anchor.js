@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 import { colors, textStyles } from '../styles'
 
 const roundedStyles = `
@@ -12,8 +12,7 @@ const roundedStyles = `
   line-height: 56px;
 `
 
-const StyledLink = styled(Link)`
-  text-decoration: none;
+const sharedStyled = css`
   text-align: center;
   text-transform: uppercase;
 
@@ -30,18 +29,26 @@ const StyledLink = styled(Link)`
   }}
 `
 
+const StyledLink = styled(Link)`
+  text-decoration: none;
+  ${sharedStyled}
+`
+
+const StyledButton = styled.button`
+  border: none;
+  cursor: pointer;
+  ${sharedStyled}
+`
+
 class Anchor extends Component {
   render() {
-    return (
-      <StyledLink
-        to={this.props.to}
-        flavor={this.props.flavor}
-        style={this.props.style}
-        className={this.props.className}
-      >
-        {this.props.children}
-      </StyledLink>
-    )
+    let Component = StyledLink
+
+    if (this.props.as === 'button') {
+      Component = StyledButton
+    }
+
+    return <Component {...this.props}>{this.props.children}</Component>
   }
 }
 

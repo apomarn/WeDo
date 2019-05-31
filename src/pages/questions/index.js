@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
+import { Redirect } from 'react-router-dom'
 import Media from 'react-media'
 import styled from 'styled-components'
 import Question from './components/question'
 import Anchor from '../../components/anchor'
 import { colors, textStyles, breakpoints, spaces } from '../../styles'
-import ThankYou from './components/thank-you'
-import utils from '../../utils'
+import { images } from '../../utils'
 
 const Container = styled.div`
   background-color: ${colors.secondary};
@@ -102,7 +102,7 @@ class Questions extends Component {
       )
     }
 
-    return <ThankYou />
+    return <Redirect to="/dashboard" />
   }
 
   renderVideo(matches) {
@@ -112,7 +112,7 @@ class Questions extends Component {
 
     return (
       <Video controls={false} autoPlay={true} muted loop>
-        <source src={utils.questionsVideo} type="video/webm" />
+        <source src={images.questionsVideo} type="video/webm" />
       </Video>
     )
   }
