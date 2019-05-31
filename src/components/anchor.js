@@ -34,6 +34,11 @@ const StyledLink = styled(Link)`
   ${sharedStyled}
 `
 
+const StyledA = styled.a`
+  text-decoration: none;
+  ${sharedStyled}
+`
+
 const StyledButton = styled.button`
   border: none;
   cursor: pointer;
@@ -42,13 +47,17 @@ const StyledButton = styled.button`
 
 class Anchor extends Component {
   render() {
-    let Component = StyledLink
+    let Wrapper = StyledLink
 
     if (this.props.as === 'button') {
-      Component = StyledButton
+      Wrapper = StyledButton
     }
 
-    return <Component {...this.props}>{this.props.children}</Component>
+    if (this.props.as === 'a') {
+      Wrapper = StyledA
+    }
+
+    return <Wrapper {...this.props}>{this.props.children}</Wrapper>
   }
 }
 

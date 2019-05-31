@@ -7,6 +7,12 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   text-align: center;
+  min-width: 156px;
+  margin: 16px 0;
+
+  *:not(:last-child) {
+    margin-bottom: ${spaces.comfortable}px;
+  }
 `
 
 const Image = styled.img`
@@ -24,7 +30,7 @@ class Feature extends Component {
       <Container>
         <Image src={this.props.image} />
         <Title>{this.props.title}</Title>
-        <Anchor to='/' flavor='plain'>
+        <Anchor to={this.props.linkTo} flavor="plain">
           {this.props.link}
         </Anchor>
       </Container>

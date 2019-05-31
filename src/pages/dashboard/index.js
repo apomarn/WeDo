@@ -73,7 +73,8 @@ class Dashboard extends Component {
 
     this.state = {
       numOfGuests: 0,
-      numOfAnswers: 0
+      numOfAnswers: 0,
+      numOfViews: 0
     }
   }
 
@@ -81,16 +82,18 @@ class Dashboard extends Component {
     const id = this.props.user.uid
     const guestsRef = firebase.database().ref('guests/' + id)
     const answersRef = firebase.database().ref('answers/' + id)
+    const viewsRef = firebase.database().ref('views/' + id)
 
-    const promises = [guestsRef.once('value'), answersRef.once('value')]
+    const promises = [guestsRef.once('value'), answersRef.once('value'), viewsRef.once('value')]
 
     Promise.all(promises).then(result => {
-      const [guests, answers] = result
+      const [guests, answers, views] = result
 
       const numOfGuests = size(guests.val())
       const numOfAnswers = size(answers.val())
+      const numOfViews = size(views.val())
 
-      this.setState({ numOfGuests, numOfAnswers })
+      this.setState({ numOfGuests, numOfAnswers, numOfViews })
     })
   }
 
@@ -108,6 +111,10 @@ class Dashboard extends Component {
 
               if (index === 1) {
                 counter.count = this.state.numOfAnswers
+              }
+
+              if (index === 2) {
+                counter.count = this.state.numOfViews
               }
 
               return <Counter key={counter.image} {...counter} />

@@ -33,3 +33,8 @@ export const questions = [
     options: ['Yes', 'No', 'Maybe']
   }
 ]
+
+export const dimensions = {
+  headerMobileHeight: 64,
+  headerDesktopHeight: 96
+}

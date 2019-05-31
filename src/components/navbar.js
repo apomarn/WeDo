@@ -55,9 +55,27 @@ class Navbar extends Component {
   renderContent(matches) {
     if (matches) {
       return (
-        <a href="/" style={{ margin: '0 auto' }}>
-          <img alt="logo" src={images.logo} width={127} height={50} />
-        </a>
+        <>
+          {this.props.user ? (
+            <>
+              <a href="/">
+                <img alt="logo" src={images.logo} width={127} height={50} />
+              </a>
+
+              <Menu>
+                <li>
+                  <StyledAnchor flavor="plain" to="/dashboard">
+                    Dashboard
+                  </StyledAnchor>
+                </li>
+              </Menu>
+            </>
+          ) : (
+            <a href="/" style={{ margin: '0 auto' }}>
+              <img alt="logo" src={images.logo} width={127} height={50} />
+            </a>
+          )}
+        </>
       )
     }
 
