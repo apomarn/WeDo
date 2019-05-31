@@ -3,11 +3,14 @@ import ReactDOM from 'react-dom'
 import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom'
 import Home from './pages/home'
 import Questions from './pages/questions'
+import QuestionsReview from './pages/questions-review'
 import Auth from './pages/auth'
 import Dashboard from './pages/dashboard'
+import GuestList from './pages/guest-list'
+import Stories from './pages/stories'
 import firebase from './firebase.js'
 
-class PrivateRoute extends Component {
+class Wrapper extends Component {
   constructor() {
     super()
 
@@ -15,10 +18,10 @@ class PrivateRoute extends Component {
   }
 
   renderComponent(props) {
-    const { component: Component, user } = this.props
+    const { component: Component, user, secured } = this.props
 
-    if (user) {
-      return <Component {...props} />
+    if (user || !secured) {
+      return <Component {...props} user={user} />
     }
 
     const routeState = { from: props.location }
@@ -56,11 +59,14 @@ class AppRouter extends Component {
 
     return (
       <Router>
-        <Route path="/" exact component={Home} user={user} />
-        <Route path="/signin" exact component={Auth} user={user} />
-        <Route path="/signup" exact component={Auth} user={user} />
-        <PrivateRoute path="/questions" component={Questions} user={user} />
-        <PrivateRoute path="/dashboard" component={Dashboard} user={user} />
+        <Wrapper path="/" exact component={Home} user={user} />
+        <Wrapper path="/signin" exact component={Auth} user={user} />
+        <Wrapper path="/signup" exact component={Auth} user={user} />
+        <Wrapper secured path="/questions" exact component={Questions} user={user} />
+        <Wrapper secured path="/questions-review" exact component={QuestionsReview} user={user} />
+        <Wrapper secured path="/dashboard" exact component={Dashboard} user={user} />
+        <Wrapper secured path="/stories" exact component={Stories} user={user} />
+        <Wrapper secured path="/guest-list" exact component={GuestList} user={user} />
       </Router>
     )
   }

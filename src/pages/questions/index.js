@@ -5,7 +5,8 @@ import styled from 'styled-components'
 import Question from './components/question'
 import Anchor from '../../components/anchor'
 import { colors, textStyles, breakpoints, spaces } from '../../styles'
-import { images } from '../../utils'
+import { images, questions } from '../../utils'
+import firebase from '../../firebase'
 
 const Container = styled.div`
   background-color: ${colors.secondary};
@@ -46,48 +47,33 @@ const StyledAnchor = styled(Anchor)`
   }
 `
 
-const questions = [
-  {
-    statement: '1. Are you emotionally as well as physically attracted to your partner?',
-    options: ['Si', 'No']
-  },
-  {
-    statement: '2. Are you emotionally as well as physically attracted to your partner?',
-    options: ['Si', 'No']
-  },
-  {
-    statement: '3. Are you emotionally as well as physically attracted to your partner?',
-    options: ['Si', 'No']
-  },
-  {
-    statement: '4. Are you emotionally as well as physically attracted to your partner?',
-    options: ['Si', 'No']
-  },
-  {
-    statement: '5. Are you emotionally as well as physically attracted to your partner?',
-    options: ['Si', 'No']
-  },
-  {
-    statement: 'Are you emotionally as well as physically attracted to your partner?',
-    options: ['Si', 'No']
-  }
-]
-
 class Questions extends Component {
-  constructor() {
-    super()
+  constructor(props) {
+    super(props)
 
     this.state = {
-      index: 0
+      index: 0,
+      answers: []
     }
 
     this.onSelect = this.onSelect.bind(this)
     this.renderContent = this.renderContent.bind(this)
     this.renderVideo = this.renderVideo.bind(this)
+
+    this.document = 'answers/' + this.props.user.uid
+
+    this.answersRef = firebase.database().ref(this.document)
   }
 
-  onSelect() {
-    this.setState({ index: this.state.index + 1 })
+  onSelect(option) {
+    const { index, answers } = this.state
+
+    answers.push(option)
+
+    this.setState({
+      index: index + 1,
+      answers
+    })
   }
 
   renderContent() {
@@ -101,6 +87,8 @@ class Questions extends Component {
         </>
       )
     }
+
+    this.answersRef.set(this.state.answers)
 
     return <Redirect to="/dashboard" />
   }

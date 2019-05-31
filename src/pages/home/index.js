@@ -10,7 +10,7 @@ class Home extends Component {
   render() {
     return (
       <>
-        <Navbar />
+        <Navbar user={this.props.user} />
         <Hero />
         <FeatureInformation />
         <FeatureDescription />

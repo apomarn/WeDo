@@ -1,9 +1,11 @@
 import React, { Component } from 'react'
+import { size } from 'lodash'
 import { spaces, textStyles, breakpoints } from '../../styles'
 import { images } from '../../utils'
 import NavBar from '../../components/navbar'
 import Counter from './components/counter'
 import styled from 'styled-components'
+import firebase from '../../firebase'
 
 const Container = styled.div`
   display: flex;
@@ -19,7 +21,7 @@ const CountersContainer = styled.div`
   flex-wrap: wrap;
 `
 
-const CoupleNames = styled.label`
+const Welcome = styled.label`
   margin-bottom: ${spaces.comfortable}px;
   margin-left: ${spaces.comfortable}px;
   text-align: left;
@@ -36,38 +38,78 @@ const counters = [
   {
     image: images.guestList,
     name: 'Guest List',
-    count: 10,
+    count: 0,
     subtitle: 'Added',
     to: '/guest-list',
+    fallbackTo: '/guest-list',
+    fallbackText: 'Add Your First Guest >',
     linkText: 'See Your Guest List >'
   },
   {
-    image: images.calendar,
-    name: 'Check List',
-    count: 10,
-    subtitle: 'Tasks',
-    to: '/check-list',
-    linkText: 'Get Things Done >'
+    image: images.questionary,
+    name: 'Questionary',
+    count: 0,
+    subtitle: 'Answers',
+    to: '/questions-review',
+    fallbackTo: '/questions',
+    fallbackText: 'Take Questions >',
+    linkText: 'Review your answers >'
   },
   {
     image: images.story,
-    name: 'Your Story',
+    name: 'Stories',
     count: 0,
     subtitle: 'Views',
-    to: '/story',
-    linkText: 'Work In Your Story >'
+    to: '/stories',
+    fallbackTo: '/stories',
+    fallbackText: 'Check Stories >',
+    linkText: 'Check Stories >'
   }
 ]
 
 class Dashboard extends Component {
+  constructor() {
+    super()
+
+    this.state = {
+      numOfGuests: 0,
+      numOfAnswers: 0
+    }
+  }
+
+  componentDidMount() {
+    const id = this.props.user.uid
+    const guestsRef = firebase.database().ref('guests/' + id)
+    const answersRef = firebase.database().ref('answers/' + id)
+
+    const promises = [guestsRef.once('value'), answersRef.once('value')]
+
+    Promise.all(promises).then(result => {
+      const [guests, answers] = result
+
+      const numOfGuests = size(guests.val())
+      const numOfAnswers = size(answers.val())
+
+      this.setState({ numOfGuests, numOfAnswers })
+    })
+  }
+
   render() {
     return (
       <>
-        <NavBar />
+        <NavBar user={this.props.user} />
         <Container>
-          <CoupleNames>Doris & Alberto</CoupleNames>
+          <Welcome>Welcome</Welcome>
           <CountersContainer>
-            {counters.map(counter => {
+            {counters.map((counter, index) => {
+              if (index === 0) {
+                counter.count = this.state.numOfGuests
+              }
+
+              if (index === 1) {
+                counter.count = this.state.numOfAnswers
+              }
+
               return <Counter key={counter.image} {...counter} />
             })}
           </CountersContainer>

@@ -4,6 +4,7 @@ import { spaces, breakpoints, colors, textStyles } from '../styles'
 import { images } from '../utils'
 import styled from 'styled-components'
 import Media from 'react-media'
+import firebase from '../firebase'
 
 const Container = styled.div`
   background-color: ${colors.white};
@@ -69,26 +70,46 @@ class Navbar extends Component {
           <img alt="logo" src={images.logo} width={127} height={50} />
         </a>
         <Menu>
-          <li>
-            <StyledAnchor flavor="plain" to="/calendar">
-              Calendar
-            </StyledAnchor>
-          </li>
-          <li>
-            <StyledAnchor flavor="plain" to="/stories">
-              Stories
-            </StyledAnchor>
-          </li>
-          <li>
-            <StyledAnchor flavor="plain" to="/questions">
-              Questionary
-            </StyledAnchor>
-          </li>
-          <li>
-            <StyledAnchor flavor="plain" to="/guest-list">
-              Guest List
-            </StyledAnchor>
-          </li>
+          {!this.props.user ? (
+            <>
+              <li>
+                <StyledAnchor flavor="plain" to="/guest-list">
+                  Guest List
+                </StyledAnchor>
+              </li>
+              <li>
+                <StyledAnchor flavor="plain" to="/questions">
+                  Questionary
+                </StyledAnchor>
+              </li>
+              <li>
+                <StyledAnchor flavor="plain" to="/stories">
+                  Stories
+                </StyledAnchor>
+              </li>
+            </>
+          ) : (
+            <>
+              <li>
+                <StyledAnchor flavor="plain" to="/dashboard">
+                  Dashboard
+                </StyledAnchor>
+              </li>
+              <li>
+                <StyledAnchor
+                  flavor="plain"
+                  to="/"
+                  onClick={e => {
+                    e.preventDefault()
+                    e.nativeEvent.preventDefault()
+                    firebase.auth().signOut()
+                  }}
+                >
+                  Logout
+                </StyledAnchor>
+              </li>
+            </>
+          )}
         </Menu>
       </>
     )
@@ -98,7 +119,7 @@ class Navbar extends Component {
     return (
       <Container>
         <InnerContainer>
-          <Media query={`(max-width: ${breakpoints.desktop}px)`}>{this.renderContent}</Media>
+          <Media query={`(max-width: ${breakpoints.desktop}px)`}>{matches => this.renderContent(matches)}</Media>
         </InnerContainer>
       </Container>
     )

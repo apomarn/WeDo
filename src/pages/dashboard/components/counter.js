@@ -19,17 +19,20 @@ const Container = styled.div`
 `
 
 const Image = styled.img`
-  object-fit: cover;
   border-radius: 50%;
-  width: ${spaces.cozy * 10}px;
   height: ${spaces.cozy * 10}px;
+  margin-bottom: ${spaces.cozy}px;
+  object-fit: cover;
+  width: ${spaces.cozy * 10}px;
 `
 
 const Name = styled.label`
+  margin-bottom: ${spaces.cozy}px;
   ${textStyles.h3}
 `
 
 const Count = styled.label`
+  margin-bottom: ${spaces.cozy}px;
   ${textStyles.h2Bold}
 `
 
@@ -45,14 +48,17 @@ const StyledAnchor = styled(Anchor)`
 
 class Counter extends Component {
   render() {
+    const isZero = Number(this.props.count) === 0
+
+    const to = isZero ? this.props.fallbackTo : this.props.to
     return (
       <Container>
         <Image src={this.props.image} />
         <Name>{this.props.name}</Name>
         <Count>{this.props.count}</Count>
         <Subtitle>{this.props.subtitle}</Subtitle>
-        <StyledAnchor flavor="plain" to={this.props.to}>
-          {this.props.linkText}
+        <StyledAnchor flavor="plain" to={to}>
+          {isZero ? this.props.fallbackText : this.props.linkText}
         </StyledAnchor>
       </Container>
     )

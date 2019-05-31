@@ -64,16 +64,16 @@ class FeatureInformation extends Component {
                   renderCenterLeftControls={({ previousSlide }) => (
                     <button onClick={previousSlide}>
                       <img
-                        alt='leftArrow'
-                        src='https://res.cloudinary.com/apomarn/image/upload/v1559083267/WeDo/left-arrow.png'
+                        alt="leftArrow"
+                        src="https://res.cloudinary.com/apomarn/image/upload/v1559083267/WeDo/left-arrow.png"
                       />
                     </button>
                   )}
                   renderCenterRightControls={({ nextSlide }) => (
                     <button onClick={nextSlide}>
                       <img
-                        alt='rightArrow'
-                        src='https://res.cloudinary.com/apomarn/image/upload/v1559083266/WeDo/right-arrow.png'
+                        alt="rightArrow"
+                        src="https://res.cloudinary.com/apomarn/image/upload/v1559083266/WeDo/right-arrow.png"
                       />
                     </button>
                   )}
