@@ -71,7 +71,7 @@ class Hero extends Component {
               marginTop: spaces.comfortable
             }}
           >
-            Find Couple
+            Discover Stories
           </Anchor>
         </ActionsContainer>
         <Couple src="https://res.cloudinary.com/apomarn/image/upload/v1559000928/WeDo/couple_ydc0gx.png" />
