@@ -56,7 +56,7 @@ class Navbar extends Component {
     if (matches) {
       return (
         <>
-          <a href="/" style={{ margin: '0 auto' }}>
+          <a href="/">
             <img alt="logo" src={images.logo} width={127} height={50} />
           </a>
           {this.props.user && (
