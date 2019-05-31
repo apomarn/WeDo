@@ -40,7 +40,14 @@ class Stories extends Component {
           <label>{this.props.coupleNames}</label>
           <label>{new Intl.DateTimeFormat().format(this.props.weddingDate)}</label>
         </CoupleContainer>
-        <Anchor target="blank" as="a" flavor="rounded" href={`https://www.zola.com/${this.props.link}`}>
+        <Anchor
+          style={{ width: 'fit-content', padding: '0 32px' }}
+          target="blank"
+          as="a"
+          flavor="rounded"
+          onClick={() => this.props.onClick(this.props.coupleNames)}
+          href={`https://www.zola.com${this.props.link}`}
+        >
           Select Couple >
         </Anchor>
       </Container>
