@@ -32,7 +32,7 @@ class Question extends Component {
         <Label>{this.props.statement}</Label>
         <OptionsContainer>
           {this.props.options.map(option => (
-            <Option key={option} text={option} onClick={this.props.onSelect} />
+            <Option key={option} text={option} onClick={() => this.props.onSelect(option)} />
           ))}
         </OptionsContainer>
       </Container>

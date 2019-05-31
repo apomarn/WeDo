@@ -86,7 +86,7 @@ class Questions extends Component {
     this.renderVideo = this.renderVideo.bind(this)
   }
 
-  onSelect() {
+  onSelect(option) {
     this.setState({ index: this.state.index + 1 })
   }
 

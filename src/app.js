@@ -5,6 +5,7 @@ import Home from './pages/home'
 import Questions from './pages/questions'
 import Auth from './pages/auth'
 import Dashboard from './pages/dashboard'
+import GuestList from './pages/guest-list'
 import firebase from './firebase.js'
 
 class PrivateRoute extends Component {
@@ -61,6 +62,7 @@ class AppRouter extends Component {
         <Route path="/signup" exact component={Auth} user={user} />
         <PrivateRoute path="/questions" component={Questions} user={user} />
         <PrivateRoute path="/dashboard" component={Dashboard} user={user} />
+        <PrivateRoute path="/guest-list" exact component={GuestList} user={user} />
       </Router>
     )
   }
