@@ -9,6 +9,11 @@ export const images = {
 
 export const questions = [
   {
+    statement:
+      'These questions will help you make a good decision, and not rush into getting married. After getting, married, you and your spouse must continually work hard to improve yourself and live the marriage you both dreamed about before saying “I Do.”',
+    options: ['Continue']
+  },
+  {
     statement: 'Are you emotionally as well as physically attracted to your partner?',
     options: ['Yes', 'No', 'A Little']
   },
@@ -31,6 +36,11 @@ export const questions = [
   {
     statement: 'Are you ready to put this persons needs above your wants?',
     options: ['Yes', 'No', 'Maybe']
+  },
+  {
+    statement:
+      ' Congratulations, you are getting married! You’re in for a wild journey, so take a deep breath and enjoy the ride.',
+    options: ['Ready!']
   }
 ]
 
