@@ -55,12 +55,9 @@ class Navbar extends Component {
   renderContent(matches) {
     if (matches) {
       return (
-        <>
-          <img alt="menu" src={images.menuIcon} width={24} height={24} />
-          <a href="/" style={{ margin: '0 auto' }}>
-            <img alt="logo" src={images.logo} width={127} height={50} />
-          </a>
-        </>
+        <a href="/" style={{ margin: '0 auto' }}>
+          <img alt="logo" src={images.logo} width={127} height={50} />
+        </a>
       )
     }
 
