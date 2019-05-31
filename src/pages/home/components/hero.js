@@ -6,7 +6,7 @@ import Anchor from '../../../components/anchor'
 
 const Headline = styled.h3`
   margin-bottom: ${spaces.comfortable}px;
-  margin-top: ${spaces.cozy * 6}px;
+  margin-top: ${spaces.cozy * 12}px;
   text-align: center;
 
   ${textStyles.h3Bold}
@@ -65,7 +65,7 @@ class Hero extends Component {
             Get Started
           </Anchor>
           <Anchor
-            to="/find-couple"
+            to="/stories"
             flavor="plain"
             style={{
               marginTop: spaces.comfortable
