@@ -9,7 +9,6 @@ const Container = styled.div`
   margin-top: 48px;
   display: flex;
   flex-direction: column;
-  // justify-content: center;
   align-items: center;
 `
 
@@ -31,30 +30,30 @@ class FooterCTA extends Component {
     return (
       <Container>
         <Headline>Ready When You Are</Headline>
-        <Anchor to='/' flavor='rounded' style={{ width: '200px' }}>
+        <Anchor to="/questions" flavor="rounded" style={{ width: '200px' }}>
           Get Started
         </Anchor>
         <Div>
           <img
-            alt='champagne'
-            width='82px'
-            height='82px'
-            margin='0 48px'
-            src='https://res.cloudinary.com/apomarn/image/upload/v1559139269/WeDo/footer-champagne.png'
+            alt="champagne"
+            width="82px"
+            height="82px"
+            margin="0 48px"
+            src="https://res.cloudinary.com/apomarn/image/upload/v1559139269/WeDo/footer-champagne.png"
           />
           <img
-            alt='fireworks'
-            width='70px'
-            height='70px'
-            margin='0 48px'
-            src='https://res.cloudinary.com/apomarn/image/upload/v1559139269/WeDo/footer-fireworks.png'
+            alt="fireworks"
+            width="70px"
+            height="70px"
+            margin="0 48px"
+            src="https://res.cloudinary.com/apomarn/image/upload/v1559139269/WeDo/footer-fireworks.png"
           />
           <img
-            alt='rings'
-            width='79px'
-            height='79px'
-            margin='0 48px'
-            src='https://res.cloudinary.com/apomarn/image/upload/v1559139269/WeDo/footer-rings.png'
+            alt="rings"
+            width="79px"
+            height="79px"
+            margin="0 48px"
+            src="https://res.cloudinary.com/apomarn/image/upload/v1559139269/WeDo/footer-rings.png"
           />
         </Div>
       </Container>
