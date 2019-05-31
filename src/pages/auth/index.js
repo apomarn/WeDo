@@ -141,7 +141,7 @@ class Auth extends Component {
 
     return (
       <>
-        <NavBar />
+        <NavBar user={this.props.user} />
         <Container>
           <InnerContainer>
             <Image src={images.authArt} />

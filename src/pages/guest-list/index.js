@@ -1,9 +1,11 @@
 import React, { Component } from 'react'
+import { map } from 'lodash'
 import styled from 'styled-components'
 import NavBar from '../../components/navbar'
 import { spaces } from '../../styles'
 import Creator from './creator'
 import Guest from './guest'
+import firebase from '../../firebase'
 
 const Guests = styled.div`
   display: flex;
@@ -18,38 +20,47 @@ const Container = styled.div`
 `
 
 class GuestList extends Component {
-  constructor() {
-    super()
+  constructor(props) {
+    super(props)
 
     this.state = {
-      guests: []
+      guests: {}
     }
 
     this.onCreate = this.onCreate.bind(this)
+    this.onDelete = this.onDelete.bind(this)
+
+    this.document = 'guests/' + this.props.user.uid
+
+    this.guestsRef = firebase.database().ref(this.document)
+  }
+
+  componentDidMount() {
+    this.guestsRef.on('value', snapshot => {
+      this.setState({ guests: snapshot.val() })
+    })
   }
 
   onCreate(data) {
-    this.state.guests.push(data)
+    this.guestsRef.push(data)
+  }
 
-    this.setState(this.state.guests)
+  onDelete(id) {
+    this.guestsRef.child(id).remove()
   }
 
   render() {
-    console.log(this.state)
-
     const { guests } = this.state
 
     return (
       <>
-        <NavBar />
-
+        <NavBar user={this.props.user} />
         <Container>
           <Guests>
-            {guests.map(guest => {
-              return <Guest key={guest.name} {...guest} />
+            {map(guests, (guest, id) => {
+              return <Guest key={id} {...guest} onDelete={() => this.onDelete(id)} />
             })}
           </Guests>
-
           <Creator onCreate={this.onCreate} />
         </Container>
       </>

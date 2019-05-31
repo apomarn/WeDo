@@ -34,12 +34,26 @@ const Phone = styled.label`
   ${textStyles.h5}
 `
 
-const TableNumber = styled.label`
+const RightContainer = styled.div`
+  display: flex;
+  flex-direction: column;
   position: absolute;
   right: ${spaces.comfortable}px;
   top: 50%;
   transform: translateY(-50%);
+`
+
+const TableNumber = styled.label`
+  margin-bottom: ${spaces.cozy}px;
+  text-align: right;
   ${textStyles.h4Bold}
+`
+
+const Delete = styled.label`
+  color: red;
+  cursor: pointer;
+  text-align: right;
+  ${textStyles.h6}
 `
 
 class Guest extends Component {
@@ -49,7 +63,10 @@ class Guest extends Component {
         <Name>{this.props.name}</Name>
         <Address>{this.props.address}</Address>
         <Phone>{this.props.phone}</Phone>
-        <TableNumber>{this.props.tableNumber}</TableNumber>
+        <RightContainer>
+          <TableNumber>{this.props.tableNumber}</TableNumber>
+          <Delete onClick={this.props.onDelete}>delete</Delete>
+        </RightContainer>
       </Container>
     )
   }
