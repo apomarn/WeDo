@@ -54,7 +54,7 @@ const counters = [
     name: 'Your Story',
     count: 0,
     subtitle: 'Views',
-    to: '/guest-list',
+    to: '/story',
     linkText: 'Work In Your Story >'
   }
 ]
