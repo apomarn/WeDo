@@ -40,8 +40,8 @@ const features = [
   },
   {
     image: images.story,
-    title: 'Share Your Wedding',
-    link: 'Get Inspired Now',
+    title: 'Get Inspired',
+    link: 'View Couples Wedding',
     linkTo: '/stories'
   }
 ]
