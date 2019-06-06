@@ -2,7 +2,9 @@
 # ![alt text](https://res.cloudinary.com/apomarn/image/upload/v1559274111/WeDo/logo.png)
 
 
-Planning a wedding can be difficult. WeDo allows you  to manage your guest list easily. It also gives you ideas to plan your perfect wedding by showing you other couple stories to get you inspired .  Get started by answering some questions before you say "I Do".
+Planning a wedding can be difficult. WeDo allows you  to manage your guest list easily. It also gives you ideas to plan your perfect wedding by showing you other couple stories to get you inspired.
+
+Get started by answering some questions before you say "I Do".
 
 Try it out by yourself [wedo.anghypomar.com](wedo.anghypomar.com)
 
@@ -10,7 +12,7 @@ Try it out by yourself [wedo.anghypomar.com](wedo.anghypomar.com)
 
 ## Introduction
 
-For this project I wanted to put into work everything I've been learning in class and by my own for the last 2 months from scratching the idea, prototyping, designing, coding and deploying.
+For this project I wanted to put into work everything I've been learning in class and by my own for the last 2 months from brainstorming, prototyping, designing, coding and deploying.
 
 So let's start.
 
@@ -18,7 +20,7 @@ So let's start.
 
 I normally use Figma to do this kind of job, I love how easy it's to switch from prototyping to actual designing a real project.
 
-I got used to start thinking before actually writing the code (biggest learning from my second project [wikibook]([https://github.com/apomarn/wiki-book](https://github.com/apomarn/wiki-book))) because in the process I can discard features, discover challenges and difficulties and even future bugs.
+I got used to start thinking before actually writing the code (biggest learning from my second project [wikibook](https://github.com/apomarn/wiki-book)) because in the process I can discard features, discover challenges and difficulties and even future bugs.
 
 After this phase were I was planning to build around nine features I ended up choosing only three of them. 
 
@@ -29,15 +31,15 @@ Questionary, Guest List and Wedding Stories.
 
 ## Design
 
-Things are getting funnier in this part,  so first I needed to find my primary and secondary color using [coolors.co]([https://coolors.co](https://coolors.co/)) and then I used [ant design color generator ](https://ant.design/docs/spec/colors) to a generate a palette.
+Things are getting exciting in this part, so first I needed to find my primary and secondary color using [coolors.co](https://coolors.co/) and then I used [ant design color generator ](https://ant.design/docs/spec/colors) to a creae a palette.
 
-So having my colors ready it's now time to choose the right font, I use [google fonts](https://fonts.google.com) it has a nice way to display and compare many of them at the same time, and the best of all is that Figma support all of them by default.
+So having my colors ready it was time to choose the right font, I use [google fonts](https://fonts.google.com) because it has a nice way to display and compare many of them at the same time, and the best of all is that Figma support them by default.
 
-Now is time to the scaler type, how my fonts will look like and the scaling factor across the app. I use [type-scale.com](https://type-scale.com/) for this.
+Time to work in the typography or how my fonts will look like across the app. I use [type-scale.com](https://type-scale.com/) for this.
 
-Now time to create the building blocks of my app, Figma has a feature called components that behaves almost like React components, so thinking on it from the design phase makes me decide on the name they will have and even how my html is going to be structured.
+Finally I designed the building blocks of my app, Figma has a feature called components that behaves almost like React components, so thinking on it from the design phase makes me decide on the name they will have and even how my html is going to be structured.
 
-![enter image description here](https://i.imgur.com/eiMlRe4.png)
+![figma design](https://i.imgur.com/eiMlRe4.png)
 
 ## The Code  & Deploy
 
@@ -91,7 +93,7 @@ here are some mobile screens.
 
 ![enter image description here](https://i.imgur.com/jb5AKwR.png)
 
-the project has much more screens that you can see by trying it by yourself in [wedo.anghypomar.com](http://wedo.anghypomar.com)
+the project has much more screens that you can see in here, so try it by yourself in [wedo.anghypomar.com](http://wedo.anghypomar.com)
 
 ## Technologies:
 
